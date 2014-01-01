@@ -37,7 +37,7 @@ define(function (require, exports, module) {
     }
     
     function _deployGuestSocket(callback) {
-        ns.socket.on('codeText', function(data) {
+        ns.on('codeText', function(data) {
             cbOnReceiveCodeText(data);
         });
         
