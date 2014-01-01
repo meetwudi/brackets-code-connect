@@ -91,7 +91,7 @@ define(function (require, exports, module) {
         actived = false;
     }
     
-    exports.setCbOnReceiveCodeText = _assertActivedStatus(setCbOnReceiveCodeText, true);
+    exports.setCbOnReceiveCodeText = setCbOnReceiveCodeText;
     exports.connectAsOwner = _assertActivedStatus(connectAsOwner, false);
     exports.connectAsGuest = _assertActivedStatus(connectAsGuest, false);
     exports.unload = _assertActivedStatus(unload, true);
