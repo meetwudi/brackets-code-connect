@@ -70,8 +70,12 @@ define(function (require, exports, module) {
     
     function handleQuitChannel() {
         if (!!currentChannel) {
+            // disconnect as owner
             currentChannel.unload();
             currentChannel = null;
+        } else {
+            // disconnect as guest 
+            connection.unload();
         }
         
         status.setStatus(status.STATUS.OFFLINE);
