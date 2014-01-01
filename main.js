@@ -69,8 +69,13 @@ define(function (require, exports, module) {
     }
     
     function handleQuitChannel() {
-        currentChannel.unload();
-        currentChannel = null;
+        if (!!currentChannel) {
+            currentChannel.unload();
+            currentChannel = null;
+        }
+        
+        status.setStatus(status.STATUS.OFFLINE);
+        window.alert('Goodbye!');
     }
     
     // Register commands

@@ -28,6 +28,7 @@ define(function (require, exports, module) {
         ns.socket.on('connect', function() {
             status.setStatus(status.STATUS.AS_OWNER);
             actived = true;
+            window.alert('You are now the owner of channel:' + channelID);
             callback();
         });
         
@@ -44,6 +45,7 @@ define(function (require, exports, module) {
         ns.socket.on('connect', function() {
             status.setStatus(status.STATUS.AS_GUEST);
             actived = true;
+            window.alert('You are now the guest of channel:' + channelID);
             callback();
         });
         

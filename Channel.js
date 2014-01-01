@@ -17,7 +17,6 @@ define(function (require, exports, module) {
     Channel.prototype.unload = function () {
         console.log('unloading');
         connection.unload();
-        status.setStatus(status.STATUS.OFFLINE);
     };
     
     
