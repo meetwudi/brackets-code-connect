@@ -51,7 +51,7 @@ define(function (require, exports, module) {
                 window.alert('Duplicated channel ID!');
             }
         }).fail(function() {
-			window.alert('server maybe not running...');
+			window.alert('Failed to connect to server.');
 		});
     }
     
