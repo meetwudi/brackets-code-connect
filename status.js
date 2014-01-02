@@ -6,8 +6,7 @@ define(function(require, exports, module){
             AS_OWNER: 1,
             AS_GUEST: 2
         },
-        currentStatus = null,
-        onStatusChanged = null;
+        currentStatus = null;
 
     
     function _notifyStatusChanged() {
@@ -36,12 +35,11 @@ define(function(require, exports, module){
     
     function setStatus(newStatus) {
         currentStatus = newStatus;
-        _notifyStatusChanged();
+        $(exports).triggerHandler('changeStatus');
     }
     
     exports.STATUS = STATUS;
-    
-    exports.setCbOnStatusChanged = setCbOnStatusChanged;    
+       
     exports.setStatus = setStatus;
     exports.getStatus = getStatus;
     exports.isOffline = isOffline;

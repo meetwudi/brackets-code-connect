@@ -31,7 +31,7 @@ define(function (require, exports, module) {
         sendCode();
     });
     
-    connection.setCbOnReceiveCodeText(function(codeText) {
+    $(connection).bind('receiveCodeText', function(event, codeText) {
         if (!editor) {
             return;
         }

@@ -10,8 +10,7 @@ define(function (require, exports, module) {
         serverURL = null,
         channelID = null,
         namespace = null,
-        ns = null,
-        cbOnReceiveCodeText = null;
+        ns = null;
     
     // protect functions to be called in wrong situations
     function _assertActivedStatus(func, shouldBeActived) {
@@ -39,7 +38,7 @@ define(function (require, exports, module) {
     
     function _deployGuestSocket(callback) {
         ns.on('codeText', function(data) {
-            cbOnReceiveCodeText(data);
+            $(exports).triggerHandler('receiveCodeText', [data]);
         });
         
         ns.socket.on('connect', function() {
@@ -80,10 +79,6 @@ define(function (require, exports, module) {
         ns.emit('codeText', data);
     }
     
-    function setCbOnReceiveCodeText(callback) {
-        cbOnReceiveCodeText = callback;
-    }
-    
     function unload() { 
         serverURL = null;
         channelID = null;
@@ -92,8 +87,7 @@ define(function (require, exports, module) {
         ns = null;
         actived = false;
     }
-    
-    exports.setCbOnReceiveCodeText = setCbOnReceiveCodeText;
+   
     exports.connectAsOwner = _assertActivedStatus(connectAsOwner, false);
     exports.connectAsGuest = _assertActivedStatus(connectAsGuest, false);
     exports.unload = _assertActivedStatus(unload, true);

@@ -35,7 +35,7 @@ define(function (require, exports, module) {
         commandQuitChannel.setEnabled(canQuitChannel);
     }
     
-    function refreshAll() {
+    function refreshAll(/*event*/) {
         refreshMenuItems();  
     }
     
@@ -105,6 +105,6 @@ define(function (require, exports, module) {
     menu.addMenuItem(COMMAND_QUIT_CHANNEL);
     
     // Set initial application status
-    status.setCbOnStatusChanged(refreshAll);
+    $(status).bind('changeStatus', refreshAll);
     status.setStatus(status.STATUS.OFFLINE);
 });
