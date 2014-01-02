@@ -9,7 +9,7 @@ You should use `cmd + R` (mac) or `F5` (windows/linux) to refresh brackets in or
 
 #Usage
 ##Registering a new channel
-Open `View -> Register new channel`, enter the server URL with port (e.g. `http://www.test-server.com:6006`) and the channel ID.  
+Open `View -> Register new channel`, enter the server URL with port (e.g. `http://localhost:6006` the default port will be 6006) and the channel ID.  
 Channel ID should be only consist of latin letters or underscore, and the underscore cannot be placed at the beginning of ID neither the ending.  
 Legal channel ID examples: `code_Connect`, `CoDeConnecT`, `code`, `C`. We suggest you use package naming convension with dots replaced by underscore, like `io_brackets_codeconnect`, `com_john_channel`.  
 Illegal channel ID examples: `_code_connect`, `code123`, `code_connect_`, `code#connect`, `code.connect`.  
