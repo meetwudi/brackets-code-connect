@@ -50,7 +50,9 @@ define(function (require, exports, module) {
             } else {
                 window.alert('Duplicated channel ID!');
             }
-        });
+        }).fail(function() {
+			window.alert('server maybe not running...');
+		});
     }
     
     function cbJoinChannelDialog(serverURL, channelID) {
