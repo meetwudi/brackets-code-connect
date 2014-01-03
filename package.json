@@ -3,7 +3,7 @@
     "title": "Brackets Code Connect",
     "description": "Realtime code sharing extension for brackets.",
     "homepage": "https://github.com/tjwudi/brackets-code-connect",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "author": "John Wu <webmaster@leapoahead.com> (https://github.com/tjwudi)",
     "license": "MIT",
     "engines": {
