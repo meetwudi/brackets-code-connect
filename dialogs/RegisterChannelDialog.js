@@ -13,7 +13,8 @@ define(function(require, exports, module) {
                 valid;
             
             // validate input values
-            valid = serverURL.match(/^http:\/\/\S+:[0-9]+\/*$/) &&
+            serverURL = serverURL.replace(/\/+$/g, ''); // trim trailing /
+            valid = serverURL.match(/^http:\/\/\S+:[0-9]+$/) &&
                 (channelID.match(/^[a-zA-Z]+[a-zA-Z\_]*[a-zA-Z]+$/) || 
                  channelID.match(/^[a-zA-Z]$/));
             
