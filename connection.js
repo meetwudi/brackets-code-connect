@@ -32,6 +32,8 @@ define(function (require, exports, module) {
         });
         
         ns.socket.on('error', function() {
+			//Actually this should move to the up layer
+			//call callback(new Error('')) would be better
             window.alert('Connection failed.');
         });
     }
