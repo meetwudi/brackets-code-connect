@@ -105,6 +105,7 @@ define(function (require, exports, module) {
     menu.addMenuItem(COMMAND_JOIN_CHANNEL);
     menu.addMenuItem(COMMAND_REGISTER_CHANNEL);
     menu.addMenuItem(COMMAND_QUIT_CHANNEL);
+    menu.addMenuDivider();
     
     // Set initial application status
     $(status).bind('changeStatus', refreshAll);
