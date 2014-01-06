@@ -5,7 +5,7 @@ define(function (require, exports, module) {
         connection = require('connection');
     
     function Channel(serverURL, channelID) {
-		this.serverURL = serverURL;
+		this.serverURL = serverURL.replace(/\/+$/g, ''); //trim trailing /
         this.channelID = channelID;
         
         // Connect to server [TODO]
