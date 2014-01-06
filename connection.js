@@ -24,9 +24,6 @@ define(function (require, exports, module) {
     }
     
     function _deployOwnerSocket(callback) {
-		ns.on('serverVersion', function(data) {
-			window.alert(data);
-		});
 
         ns.socket.on('connect', function() {
             status.setStatus(status.STATUS.AS_OWNER);
@@ -46,10 +43,6 @@ define(function (require, exports, module) {
         ns.on('codeText', function(data) {
             $(exports).triggerHandler('receiveCodeText', [data]);
         });
-        
-		ns.on('serverVersion', function(data) {
-			window.alert(data);
-		});
 
         ns.socket.on('connect', function() {
             status.setStatus(status.STATUS.AS_GUEST);
