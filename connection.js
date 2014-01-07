@@ -4,7 +4,8 @@ define(function (require, exports, module) {
     var context = this;
     
     var socket_io = require('socket.io'),
-        status = require('status');
+        status = require('status'),
+        util = require('util');
     
     var actived = false,
         serverURL = null,
@@ -37,6 +38,12 @@ define(function (require, exports, module) {
 			//call callback(new Error('')) would be better
             window.alert('Connection failed.');
         });
+        
+        ns.socket.on('serverVersion', function(data) {
+            if (util.versionCompare(data, require('./config.js').requiredServerVersion) === -1) {
+                window.alert('Server version mismatched. Be sure to use the latest version of both client and server :)');
+            }
+        });
     }
     
     function _deployGuestSocket(callback) {
@@ -53,6 +60,12 @@ define(function (require, exports, module) {
         
         ns.socket.on('error', function() {
             window.alert('Connection failed.');
+        });
+
+        ns.socket.on('serverVersion', function(data) {
+            if (util.versionCompare(data, require('./config.js').requiredServerVersion) === -1) {
+                window.alert('Server version mismatched. Be sure to use the latest version of both client and server :)');
+            }
         });
     }
     
