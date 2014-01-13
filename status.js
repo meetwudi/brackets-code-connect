@@ -32,7 +32,10 @@ define(function(require, exports, module){
         $(exports).triggerHandler('changeStatus');
         
         if (currentStatus === STATUS.AS_OWNER) {
-            StatusMessageBar.showBar('Fun', 'owner');
+            StatusMessageBar.showBar('owner');
+        }
+        else if (currentStatus === STATUS.AS_GUEST) {
+            StatusMessageBar.showBar('guest');
         }
     }
     

@@ -7,8 +7,8 @@ define(function(require, exports, module) {
         $template,
         panel;
     
-    function showBar(channelID, status) {
-        var renderedTemplateHTML = Mustache.render(templateHTML, {channelID: channelID, status: status});
+    function showBar(status) {
+        var renderedTemplateHTML = Mustache.render(templateHTML, {status: status});
         $template = $(renderedTemplateHTML);
         $template.find('.close').bind('click', function() {
             dismissBar();
