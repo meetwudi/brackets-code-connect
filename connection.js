@@ -38,7 +38,7 @@ define(function (require, exports, module) {
             window.alert('Connection failed.');
         });
         
-        ns.socket.on('serverVersion', function(data) {
+        ns.on('serverVersion', function(data) {
             if (util.versionCompare(data, config.requiredServerVersion) === -1) {
                 window.alert('Server version mismatched. Be sure to use the latest version of both client and server :)');
             }
@@ -60,7 +60,8 @@ define(function (require, exports, module) {
             window.alert('Connection failed.');
         });
 
-        ns.socket.on('serverVersion', function(data) {
+        ns.on('serverVersion', function(data) {
+            alert(data);
             if (util.versionCompare(data, config.requiredServerVersion) === -1) {
                 window.alert('Server version mismatched. Be sure to use the latest version of both client and server :)');
             }
