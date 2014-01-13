@@ -66,6 +66,7 @@
       "define" : true,
       "brackets" : true,
       "window" : true,
-      "$" : true
+      "$" : true,
+      "Mustache" : true
     }
 }

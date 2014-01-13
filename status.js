@@ -1,6 +1,8 @@
 define(function(require, exports, module){
     "use strict";
     
+    var StatusMessageBar = require('./bars/StatusMessageBar');
+    
     var STATUS = {
             OFFLINE: 0,
             AS_OWNER: 1,
@@ -8,10 +10,6 @@ define(function(require, exports, module){
         },
         currentStatus = null;
 
-    
-    function _notifyStatusChanged() {
-        onStatusChanged && typeof onStatusChanged === "function" && onStatusChanged();
-    }
     
     function isOffline() {
         return currentStatus === STATUS.OFFLINE;   
@@ -32,6 +30,10 @@ define(function(require, exports, module){
     function setStatus(newStatus) {
         currentStatus = newStatus;
         $(exports).triggerHandler('changeStatus');
+        
+        if (currentStatus === STATUS.AS_OWNER) {
+            StatusMessageBar.showBar('Fun', 'owner');
+        }
     }
     
     exports.STATUS = STATUS;
