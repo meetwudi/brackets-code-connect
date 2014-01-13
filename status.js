@@ -13,10 +13,6 @@ define(function(require, exports, module){
         onStatusChanged && typeof onStatusChanged === "function" && onStatusChanged();
     }
     
-    function setCbOnStatusChanged(callback) {
-        onStatusChanged = callback;
-    }
-    
     function isOffline() {
         return currentStatus === STATUS.OFFLINE;   
     }

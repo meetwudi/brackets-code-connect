@@ -20,7 +20,6 @@ define(function (require, exports, module) {
         if (!editor) {
             return;
         }
-        
         $(editor).on("change", sendCode);
     }
     refreshEditorBinding();
