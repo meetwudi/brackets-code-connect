@@ -5,7 +5,8 @@ define(function (require, exports, module) {
     
     var socket_io = require('socket.io'),
         status = require('status'),
-        util = require('util');
+        util = require('util'),
+        config = JSON.parse(require('text!./config.json'));
     
     var actived = false,
         serverURL = null,
@@ -25,7 +26,6 @@ define(function (require, exports, module) {
     }
     
     function _deployOwnerSocket(callback) {
-
         ns.socket.on('connect', function() {
             status.setStatus(status.STATUS.AS_OWNER);
             actived = true;
@@ -40,7 +40,7 @@ define(function (require, exports, module) {
         });
         
         ns.socket.on('serverVersion', function(data) {
-            if (util.versionCompare(data, require('./config.js').requiredServerVersion) === -1) {
+            if (util.versionCompare(data, config.requiredServerVersion) === -1) {
                 window.alert('Server version mismatched. Be sure to use the latest version of both client and server :)');
             }
         });
@@ -63,7 +63,7 @@ define(function (require, exports, module) {
         });
 
         ns.socket.on('serverVersion', function(data) {
-            if (util.versionCompare(data, require('./config.js').requiredServerVersion) === -1) {
+            if (util.versionCompare(data, config.requiredServerVersion) === -1) {
                 window.alert('Server version mismatched. Be sure to use the latest version of both client and server :)');
             }
         });
