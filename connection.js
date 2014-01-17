@@ -49,6 +49,10 @@ define(function (require, exports, module) {
         ns.on('codeText', function(data) {
             $(exports).triggerHandler('receiveCodeText', [data]);
         });
+        
+        ns.on('shouldDisconnect', function() {
+           ns.socket.disconnect(); 
+        });
 
         ns.socket.on('connect', function() {
             status.setStatus(status.STATUS.AS_GUEST);
