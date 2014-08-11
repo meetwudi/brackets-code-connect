@@ -5,7 +5,6 @@
     "forin"         : true,
     "immed"         : true,
     "latedef"       : true,
-    "hezibo"        : true,
     "newcap"        : true,
     "noarg"         : true,
     "noempty"       : true,
