@@ -1,3 +1,10 @@
+> I've not been active on this project for a long time. I wrote it when I first got started with JavaScript and node.
+
+> So now, only GOD know what I was writing.
+
+> I've decided to develop a brand new version and will publish it soon, maybe some day in April 2015. Stay tuned!
+
+
 #brackets-code-connect
 Code connect is an extension for [adobe/brackets](https://github.com/adobe/brackets).   Code connect allows you to synchronize your code in the currently actived brackets editor to others' actived brackets editor. The actived brackets editor is the opened code editor in brackets.  
 You can use code connect to share your code to others. It will be especially helpful when teaching students, having a team meeting or discuss with other programmers, etc.  
